@@ -1,1 +1,1 @@
-# calculator
+Struggle with a difficult task without utilzing on looking up solutions. I will try to finish this purely utilizing google and not searching up how to solve the problem directly.
