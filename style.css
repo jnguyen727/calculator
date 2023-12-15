@@ -1,3 +1,9 @@
+html {
+  height: 100%;
+}
+
+
+
 .calculatorBody {
     border: 5px solid;
     position: absolute;
@@ -36,6 +42,33 @@
     justify-content: space-around;
   }
 
+  .row5 {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .rowOneButton,
+  .rowTwoButton,
+  .rowThreeButton,
+  .rowFourButton,
+  .rowFiveButton {
+   
+
+    width: 100%;
+    padding: 56px;
+  }
 
 
+
+.calculatorDisplay {
+
+  border: black solid;
+  padding: 100px;
+}
+
+#calculatorResults {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 50px;
+}
 
