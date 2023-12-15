@@ -16,6 +16,26 @@
 
   }
 
+  .row1 {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .row2 {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .row3 {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .row4 {
+    display: flex;
+    justify-content: space-around;
+  }
+
 
 
 
