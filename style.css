@@ -1,0 +1,21 @@
+.calculatorBody {
+    border: 5px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px; /* Set a fixed width */
+    height: 900px; /* Set a fixed height */
+
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+   display: flex;   
+
+   flex-direction: column;
+   justify-content: space-between;
+
+
+  }
+
+
+
+

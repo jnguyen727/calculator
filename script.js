@@ -1,6 +1,6 @@
 let firstNumber = 0;
 let secondNumber = 0;
-let operator = prompt("What");
+//let operator = prompt("What");
 
 
 switch (operator) {
