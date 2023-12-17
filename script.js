@@ -60,6 +60,11 @@ function operate(firstNumber, secondNumber, operator) {
 
 let calculatorText = document.getElementById('calculatorResults');
 
+
+let equalsKey = document.getElementById('equalsKey');
+
+
+
 let plusKey = document.getElementById('plusKey');
 
 plusKey.addEventListener("click", function() {
@@ -84,8 +89,22 @@ plusKey.addEventListener("click", function() {
        calculatorText.textContent = operate(firstNumber,secondNumber,operator);
        firstNumber = calculatedValue;
        secondNumber = 0;
-    
+
+
        }
+
+   
+})
+
+equalsKey.addEventListener('click', function() {
+    secondNumber = calculatorText.textContent.toString().substring(firstNumber.length + 3);
+    if (secondNumber != 0) {
+        let calculatedValue = operate(firstNumber,secondNumber,operator);
+        calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+        firstNumber = calculatedValue;
+        secondNumber = 0;
+    }
+
 })
 
 let minusKey = document.getElementById('minusKey');
