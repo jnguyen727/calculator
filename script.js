@@ -79,9 +79,13 @@ plusKey.addEventListener("click", function() {
 
     }
 
-   if (secondNumber != 0) {
-   calculatorText.textContent = operate(firstNumber,secondNumber,operator);
-   }
+    if (secondNumber != 0) {
+        let calculatedValue = operate(firstNumber,secondNumber,operator);
+       calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+       firstNumber = calculatedValue;
+       secondNumber = 0;
+    
+       }
 })
 
 let minusKey = document.getElementById('minusKey');
@@ -103,9 +107,13 @@ minusKey.addEventListener("click", function() {
 
     }
 
-   if (secondNumber != 0) {
-   calculatorText.textContent = operate(firstNumber,secondNumber,operator);
-   }
+    if (secondNumber != 0) {
+        let calculatedValue = operate(firstNumber,secondNumber,operator);
+       calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+       firstNumber = calculatedValue;
+       secondNumber = 0;
+    
+       }
 })
 
 let multiplyKey = document.getElementById('multiplyKey');
@@ -127,9 +135,13 @@ multiplyKey.addEventListener("click", function() {
 
     }
 
-   if (secondNumber != 0) {
-   calculatorText.textContent = operate(firstNumber,secondNumber,operator);
-   }
+    if (secondNumber != 0) {
+        let calculatedValue = operate(firstNumber,secondNumber,operator);
+       calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+       firstNumber = calculatedValue;
+       secondNumber = 0;
+    
+       }
 })
 
 let divideKey = document.getElementById('divideKey');
@@ -152,7 +164,11 @@ divideKey.addEventListener("click", function() {
     }
 
    if (secondNumber != 0) {
+    let calculatedValue = operate(firstNumber,secondNumber,operator);
    calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+   firstNumber = calculatedValue;
+   secondNumber = 0;
+
    }
 })
 let oneKey = document.getElementById('oneKey');
