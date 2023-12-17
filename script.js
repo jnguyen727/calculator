@@ -63,24 +63,39 @@ let plusKey = document.getElementById('plusKey');
 
 plusKey.addEventListener("click", function() {
     calculatorText.textContent = calculatorText.textContent + ' +';
+    operator = 'add';
 })
 
 let minusKey = document.getElementById('minusKey');
 
 minusKey.addEventListener("click", function() {
     calculatorText.textContent = calculatorText.textContent + ' -';
+    operator = 'subtract';
 })
 
 let multiplyKey = document.getElementById('multiplyKey');
 
 multiplyKey.addEventListener("click", function() {
     calculatorText.textContent = calculatorText.textContent + ' x';
+    operator = 'multiply';
 })
 
 let divideKey = document.getElementById('divideKey');
 
 divideKey.addEventListener("click", function() {
-    calculatorText.textContent = calculatorText.textContent + ' ÷';
+    if (calculatorText.textContent.toString().includes('-') ||
+    calculatorText.textContent.toString().includes('+') ||
+    calculatorText.textContent.toString().includes('x') ||
+    calculatorText.textContent.toString().includes('÷')) {
+        secondNumber = calculatorText.textContent.toString().substring(firstNumber.length + 3);
+        calculatorText.textContent = calculatorText.textContent + ' ÷';
+        operator = 'divide';
+    } else {
+        firstNumber = calculatorText.textContent;
+        calculatorText.textContent = calculatorText.textContent + ' ÷';
+        operator = 'divide';
+    }
+   
 })
 let oneKey = document.getElementById('oneKey');
 
@@ -95,7 +110,6 @@ oneKey.addEventListener("click", function() {
         calculatorText.textContent += ' 1';
     } else {
         calculatorText.textContent += '1';
-        firstNumber += calculatorText.textContent;
     }
     
 })
@@ -215,3 +229,4 @@ if (calculatorText.textContent.toString().slice(-1) == '+' ||
     }
     
 })
+
