@@ -18,9 +18,10 @@ switch (operator) {
         break;
 }
 */
+let answer = 0;
 
 function add(firstNumber, secondNumber) {
-   return (firstNumber + secondNumber);
+   return parseFloat(firstNumber) + parseFloat(secondNumber);
 
 }
 
@@ -62,22 +63,73 @@ let calculatorText = document.getElementById('calculatorResults');
 let plusKey = document.getElementById('plusKey');
 
 plusKey.addEventListener("click", function() {
-    calculatorText.textContent = calculatorText.textContent + ' +';
-    operator = 'add';
+    if (calculatorText.textContent.toString().includes('-') ||
+    calculatorText.textContent.toString().includes('+') ||
+    calculatorText.textContent.toString().includes('x') ||
+    calculatorText.textContent.toString().includes('÷')) {
+        secondNumber = calculatorText.textContent.toString().substring(firstNumber.length + 3);
+        calculatorText.textContent = calculatorText.textContent + ' +';
+
+    } 
+
+    else if (secondNumber == 0) {
+        firstNumber = calculatorText.textContent;
+        calculatorText.textContent = calculatorText.textContent + ' +';
+        operator = 'add';
+
+    }
+
+   if (secondNumber != 0) {
+   calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+   }
 })
 
 let minusKey = document.getElementById('minusKey');
 
 minusKey.addEventListener("click", function() {
-    calculatorText.textContent = calculatorText.textContent + ' -';
-    operator = 'subtract';
+    if (calculatorText.textContent.toString().includes('-') ||
+    calculatorText.textContent.toString().includes('+') ||
+    calculatorText.textContent.toString().includes('x') ||
+    calculatorText.textContent.toString().includes('÷')) {
+        secondNumber = calculatorText.textContent.toString().substring(firstNumber.length + 3);
+        calculatorText.textContent = calculatorText.textContent + ' -';
+
+    } 
+
+    else if (secondNumber == 0) {
+        firstNumber = calculatorText.textContent;
+        calculatorText.textContent = calculatorText.textContent + ' -';
+        operator = 'subtract';
+
+    }
+
+   if (secondNumber != 0) {
+   calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+   }
 })
 
 let multiplyKey = document.getElementById('multiplyKey');
 
 multiplyKey.addEventListener("click", function() {
-    calculatorText.textContent = calculatorText.textContent + ' x';
-    operator = 'multiply';
+    if (calculatorText.textContent.toString().includes('-') ||
+    calculatorText.textContent.toString().includes('+') ||
+    calculatorText.textContent.toString().includes('x') ||
+    calculatorText.textContent.toString().includes('÷')) {
+        secondNumber = calculatorText.textContent.toString().substring(firstNumber.length + 3);
+        calculatorText.textContent = calculatorText.textContent + ' x';
+
+    } 
+
+    else if (secondNumber == 0) {
+        firstNumber = calculatorText.textContent;
+        calculatorText.textContent = calculatorText.textContent + ' x';
+        operator = 'multiply';
+
+    }
+
+   if (secondNumber != 0) {
+   calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+   }
 })
 
 let divideKey = document.getElementById('divideKey');
@@ -89,13 +141,19 @@ divideKey.addEventListener("click", function() {
     calculatorText.textContent.toString().includes('÷')) {
         secondNumber = calculatorText.textContent.toString().substring(firstNumber.length + 3);
         calculatorText.textContent = calculatorText.textContent + ' ÷';
-        operator = 'divide';
-    } else {
+
+    } 
+
+    else if (secondNumber == 0) {
         firstNumber = calculatorText.textContent;
         calculatorText.textContent = calculatorText.textContent + ' ÷';
         operator = 'divide';
+
     }
-   
+
+   if (secondNumber != 0) {
+   calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+   }
 })
 let oneKey = document.getElementById('oneKey');
 
