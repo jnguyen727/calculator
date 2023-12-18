@@ -55,7 +55,7 @@ html {
    
 
     width: 100%;
-    padding: 56px;
+    padding:62px;
   }
 
 
@@ -64,6 +64,7 @@ html {
 
   border: black solid;
   padding: 100px;
+  max-height: 0px;
 }
 
 #calculatorResults {

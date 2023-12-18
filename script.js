@@ -63,7 +63,23 @@ let calculatorText = document.getElementById('calculatorResults');
 
 let equalsKey = document.getElementById('equalsKey');
 
+let clearKey = document.getElementById('clearKey');
 
+clearKey.addEventListener('click', function() {
+    firstNumber = 0;
+    secondNumber = 0;
+    operator = null;
+    calculatorText.textContent = '';
+})
+
+let negativeKey = document.getElementById('negativeKey');
+
+negativeKey.addEventListener('click', function() {
+    calculatorText.textContent = calculatorText.textContent + '-';
+
+    
+
+})
 
 let plusKey = document.getElementById('plusKey');
 
@@ -97,12 +113,18 @@ plusKey.addEventListener("click", function() {
 })
 
 equalsKey.addEventListener('click', function() {
-    secondNumber = calculatorText.textContent.toString().substring(firstNumber.length + 3);
-    if (secondNumber != 0) {
+
+    if (operator == 'add' || operator == 'subtract' || operator == 'multiply' || operator == 'divide' && (calculatorText.textContent.toString().includes('-') ||
+    calculatorText.textContent.toString().includes('+') ||
+    calculatorText.textContent.toString().includes('x') ||
+    calculatorText.textContent.toString().includes('÷'))) {
+        secondNumber = calculatorText.textContent.toString().substring(firstNumber.length + 3);
         let calculatedValue = operate(firstNumber,secondNumber,operator);
         calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+ 
         firstNumber = calculatedValue;
         secondNumber = 0;
+        operator = null;
     }
 
 })
