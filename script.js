@@ -75,7 +75,7 @@ clearKey.addEventListener('click', function() {
 let negativeKey = document.getElementById('negativeKey');
 
 negativeKey.addEventListener('click', function() {
-    calculatorText.textContent = calculatorText.textContent + '-';
+    calculatorText.textContent = '-';
 
     
 
@@ -102,7 +102,7 @@ plusKey.addEventListener("click", function() {
 
     if (secondNumber != 0) {
         let calculatedValue = operate(firstNumber,secondNumber,operator);
-       calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+       calculatorText.textContent = Math.round(calculatedValue * 1000) / 1000
        firstNumber = calculatedValue;
        secondNumber = 0;
 
@@ -120,11 +120,15 @@ equalsKey.addEventListener('click', function() {
     calculatorText.textContent.toString().includes('÷'))) {
         secondNumber = calculatorText.textContent.toString().substring(firstNumber.length + 3);
         let calculatedValue = operate(firstNumber,secondNumber,operator);
-        calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+        calculatorText.textContent = Math.round(calculatedValue * 1000) / 1000
  
         firstNumber = calculatedValue;
         secondNumber = 0;
         operator = null;
+    }
+
+    if (firstNumber == 'Infinity') {
+        calculatorText.textContent = "DON'T DO THAT...";
     }
 
 })
@@ -150,7 +154,7 @@ minusKey.addEventListener("click", function() {
 
     if (secondNumber != 0) {
         let calculatedValue = operate(firstNumber,secondNumber,operator);
-       calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+       calculatorText.textContent = Math.round(calculatedValue * 1000) / 1000
        firstNumber = calculatedValue;
        secondNumber = 0;
     
@@ -178,7 +182,7 @@ multiplyKey.addEventListener("click", function() {
 
     if (secondNumber != 0) {
         let calculatedValue = operate(firstNumber,secondNumber,operator);
-       calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+       calculatorText.textContent = Math.round(calculatedValue * 1000) / 1000
        firstNumber = calculatedValue;
        secondNumber = 0;
     
@@ -206,7 +210,7 @@ divideKey.addEventListener("click", function() {
 
    if (secondNumber != 0) {
     let calculatedValue = operate(firstNumber,secondNumber,operator);
-   calculatorText.textContent = operate(firstNumber,secondNumber,operator);
+   calculatorText.textContent = Math.round(calculatedValue * 1000) / 1000
    firstNumber = calculatedValue;
    secondNumber = 0;
 
@@ -242,6 +246,7 @@ twoKey.addEventListener("click", function() {
     }
     
 })
+
 
 
 let threeKey = document.getElementById('threeKey');
@@ -341,6 +346,21 @@ if (calculatorText.textContent.toString().slice(-1) == '+' ||
         calculatorText.textContent += ' 9';
     } else {
         calculatorText.textContent += '9';
+    }
+    
+})
+
+
+let zeroKey = document.getElementById('zeroKey');
+
+zeroKey.addEventListener('click', function() {
+    if (calculatorText.textContent.toString().slice(-1) == '+' || 
+    calculatorText.textContent.toString().slice(-1) == '-' || 
+    calculatorText.textContent.toString().slice(-1) == 'x' || 
+    calculatorText.textContent.toString().slice(-1) == '÷') {
+        calculatorText.textContent += ' 0';
+    } else {
+        calculatorText.textContent += '0';
     }
     
 })
