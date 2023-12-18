@@ -74,12 +74,7 @@ clearKey.addEventListener('click', function() {
 
 let negativeKey = document.getElementById('negativeKey');
 
-negativeKey.addEventListener('click', function() {
-    calculatorText.textContent = '-';
 
-    
-
-})
 
 let plusKey = document.getElementById('plusKey');
 
